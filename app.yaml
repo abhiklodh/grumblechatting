@@ -1,0 +1,50 @@
+application: grumblechatting
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+
+- url: /account/.*
+  script: account.py
+  login: required
+
+- url: /room/[^/]+/(msg|topic)
+  script: message.py
+  login: required
+
+- url: /api/room/[^/]+/.+
+  script: message.py
+  login: required
+  
+- url: /room/.*
+  script: room.py
+  login: required
+
+- url: /tasks/.*
+  script: tasks.py
+  login: admin
+
+- url: /css
+  static_dir: css 
+  expiration: 1d
+
+- url: /js
+  static_dir: js
+  expiration: 1d
+
+- url: /images
+  static_dir: images
+  expiration: 1d
+
+- url: /sounds
+  static_dir: sounds
+  expiration: 1d
+  
+- url: /favicon.ico
+  static_files: images/favicon.ico
+  upload: images/favicon.ico
+
+
+- url: .*
+  script: main.py

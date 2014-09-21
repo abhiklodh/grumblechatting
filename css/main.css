@@ -1,0 +1,297 @@
+body {
+    background: #1074da url(/images/grain.png) fixed;
+    margin: 0;
+    padding: 0;
+}
+
+a {color: #3087e0;}
+
+.superfluous-glow {
+    background: url(/images/glowlarge.png) no-repeat top center;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+#chatlog {
+    width: 100%;
+    margin: 0;
+    font-size: 120%;
+    border-collapse: collapse;
+    margin-bottom: -11px;
+    position: relative;
+    margin-top: -20px;
+}
+
+.msg-timestamp {
+    font-size: 80%;
+    color: #808080;
+    background: #f9f8f8;
+    text-align: right;
+}
+
+.msg-sender {
+    text-align: right;
+    font-weight: bold;
+    background: #f9f8f8;
+    white-space: nowrap;
+}
+
+.msg-content {
+    background: #ffffff;
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    border-right: 0;
+    max-width: 600px;
+    word-wrap:break-word;
+}
+
+.msg-content p {
+    margin: 0px;
+}
+
+.msg-timestamp abbr {
+    border-bottom: 0;
+}
+
+.msg-content img {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.event-part .msg-timestamp, .event-part .msg-sender {
+    background: #FFEBEB;
+    font-weight: normal;
+}
+
+.event-part .msg-content {
+    font-style: italic;
+    background: #FFEBEB;
+    border: 0;
+}
+
+.event-join .msg-timestamp, .event-join .msg-sender {
+    background: #EBFFEC;
+    font-weight: normal;
+}
+
+.event-join .msg-content {
+    font-style: italic;
+    background: #EBFFEC;
+    border: 0;
+}
+
+.event-topic .msg-timestamp, .event-topic .msg-sender {
+    background: #EBECFF;
+    font-weight: normal;
+}
+
+.event-topic .msg-content {
+    font-style: italic;
+    background: #EBECFF;
+    border: 0;
+}
+
+.event-topic .msg-content:before {
+    content: 'changed the topic to: ';
+}
+
+.event-join .msg-content:before {
+    content: 'entered the room';
+}
+
+.event-part .msg-content:before {
+    content: 'left the room';
+}
+
+#sidebar {
+    overflow: auto;
+    background: #fff;
+    padding: 10px;
+}
+
+#room-name {
+    text-decoration: underline;
+}
+
+#room-topic {
+    line-height: 1.2;
+}
+
+h3#room-users {
+    margin-bottom: .5em;
+}
+
+#userlist {
+    font-size: 120%;
+}
+
+#userlist img {
+    vertical-align: middle;
+}
+
+#text-entry {
+    width: 100%;
+    background: #e3e3e3;
+    margin-top: 10px;
+}
+
+#text-entry .preface-text {border-top: 1px solid #c7c7c7; z-index: 100; position: relative;}
+
+#text-entry-content {
+    background: #e3e3e3;
+    font-size: 120%;
+    border: 0;
+    position: relative;
+    z-index: 99;
+    width: 98.1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#text-entry-content:focus {
+    outline: none;
+}
+
+
+#send-message {float: right; margin-right: 10px;
+    margin-top: 10px;}
+
+.edit {
+    background: url(/images/page_white_edit.png) no-repeat;
+    padding-left: 20px;
+}
+
+.roomtable {
+    font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size:12px;
+    width:300px;
+    text-align:left;
+    border-collapse:collapse;
+    margin:20px;
+}
+
+.roomtable th{
+    font-weight:normal;
+    font-size:13px;
+    color:#000;
+    background:#fff;
+    padding:8px;
+}
+.roomtable td{ 
+    background:#bbbbbb;
+    border-top:1px solid #fff;
+    color:#000;
+    padding:8px;
+}
+
+table.account-settings {
+    width: auto;
+}
+
+.superfluous-surrounding {
+    margin-bottom: 20px;
+    min-width: 550px;
+    margin-left: 20px;
+    width: 70%;
+    padding: 10px;
+    padding-top: 0;
+    background: url(/images/eightysixpercent.png);
+}
+
+.superfluous-surrounding-sidebar {
+    background: url(/images/eightysixpercent.png);
+    width: 20%;
+    position: fixed;
+    top: 0;
+    right: 20px;
+    padding: 10px;
+    margin-top: -10px;
+}
+
+img#logo-main, img#logo {
+    opacity: .3;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+img#logo-main:hover, img#logo:hover {opacity: 1;}
+
+h1 {width: 600px; margin: 0 auto;}
+
+.superfluous-static {
+    background: url(/images/eightysixpercent.png);
+    padding: 10px;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.static {
+    background: #fff;
+    padding: 20px;
+}
+
+.settings li {list-style: none; font-size: 120%;}
+
+label {width: 100px; text-align: right; display: inline-block; margin-right: 10px;}
+
+input {padding: 3px; width: 300px;}
+input#nope {margin-left: 80px; width: 20px; margin-right: 10px;}
+
+button {
+    border: 0;
+    font-size: 120%;
+    background: #306ea7;
+    display: inline-block;
+    padding: 5px 10px 6px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px #999;
+    -webkit-box-shadow: 0 1px 3px #999;
+    text-shadow: 0 -1px 1px #666;
+    border-bottom: 1px solid #666;
+    position: relative;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3485d0;
+}
+
+button:active {
+
+    border-top: 1px solid #666;
+    border-bottom: 0;
+}
+
+.close {
+    float: right;
+    padding: 9px;
+    background: #ccc;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+.close:hover {background: #666; color: #000;}
+
+button#pickfiles {
+    margin-bottom: 10px;
+}
+
+#sidebar button {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}

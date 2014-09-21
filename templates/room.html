@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+
+{% block title %}{{ room.name }}: {{ room.topic }}{% endblock %}
+
+{% block heading %}{% endblock %}
+
+
+{% block content %}
+<div class="superfluous-surrounding-sidebar">
+<div id="sidebar">
+
+    <h2 id="room-name">{{ room.name }}</h2>
+
+<div class="details">
+    <h3 id="room-topic" class="edit">{{ room.topic }}</h3>
+    <hr/>
+    <div class="user-stuff">
+        <h3 id="room-users">Users:</h3>
+        <table id="userlist">
+          {% for roomlisting in roomlist %}
+          <tr id="user-{{ roomlisting.account.key.id }}">
+            <td>{{ roomlisting.account.gravatar_tag|safe }}
+            {{ roomlisting.account.nickname }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+    <div class="uploads">
+    <hr/>
+    <form>
+            <div id="container">
+                    <div id="filelist"></div>
+                    <button id="pickfiles">Upload Files</button>
+            </div>
+    </form>
+    </div>
+    <hr/>
+	<div id="settings">
+		<a href="http://bloggercls8e.appspot.com/" target="_blank">Bug/Feature Request</a><br>
+		<a href="/account/{{ account.key }}">My Settings</a>
+	</div>
+
+    <a href="http://abhiklodhclass8e.appspot.com/christ.html/"><img src="/images/logo.png" id="logo" /></a>
+        <form action="/room/{{ room.key.name }}/leave" method="post">
+      <p>
+        <button type="submit" value="Leave Room" id="leave" >Leave Room</button>
+      </p>
+    </form>
+
+</div>
+</div><!-- close #sidebar -->
+</div>
+<div class="superfluous-surrounding">
+<table id="chatlog">
+  {% for message in messages %}
+    {% include "room_message.html" %}
+  {% endfor %}
+  {% include "room_message.html" %}
+</table>
+
+<form id="text-entry" action="/room/{{ room.key.name }}/msg" method="post">
+  <div class="preface-text">
+    <input id="text-entry-content" type="text" name="content" autocomplete="off" placeholder="UR MSG HERE"/>
+  </div>
+</form>
+</div>
+
+{% endblock %}
+
+
+{% block script %}
+the_room = { key: '{{ room.key.name }}', name: '{{ room.name }}' };
+the_account = { nickname: '{{ account.nickname|safe }}', id: '{{ account.key.id }}', use_sound: '{{ account.use_sound}}' };
+chat.initialize(the_room, the_account, '{{ upload_url }}','{{ message_last_key }}');
+{% endblock %}

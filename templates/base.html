@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
+  <meta name="viewport" content="width=500px" />
+  <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="/css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/inlineplayer.css" type="text/css"/> 
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.3/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
+  <script type="text/javascript" src="/js/jquery.jeditable.js"></script>
+  <script type="text/javascript" src="/js/jquery.idle-timer.js"></script>
+  <script type="text/javascript" src="/js/jquery.favicon.js"></script>
+  <script type="text/javascript" src="/js/soundmanager2.js"></script>
+  <script type="text/javascript" src="/js/inlineplayer.js"></script>  
+  <script type="text/javascript" src="/js/plupload/gears_init.js"></script>
+  <script type="text/javascript" src="/js/plupload/plupload.full.min.js"></script>
+  
+  {% block head_extra %}{% endblock %}
+  <title>{% block title %}Main Page{% endblock %}</title>
+</head>
+
+<body>
+<div class="superfluous-glow"></div>
+  <div>
+    <h1>{% block heading %}<a href="http://abhiklodhclass8e.appspot.com/christ.html"><img src="/images/logo.png" alt="Grumble." title="About Grumble" id="logo-main" /></a>{% endblock %}</h1>
+    <h2>{% block subheading %}{% endblock %}</h2>
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      {% block script %}{% endblock %}
+    });
+  </script>
+<div id="sm2-container" style="position:absolute;left:-999px;top:-999px;">
+</div>
+</body>
+
+</html>
